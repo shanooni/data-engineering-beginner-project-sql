@@ -99,3 +99,41 @@ FROM Customers
 WHERE score != 0
 GROUP BY country
 HAVING AVG(score) > 430;
+
+
+-- DISTINCT CLAUSE
+-- the DISTINCT keyword is used to return only distinct (different) values,
+-- the DISTINCT keyword ensures only unique values are returned in the result set
+
+-- COMMAND: SELECT DISTINCT column1, column2, FROM table_name;
+-- TASK 1 : Retrieve distinct countries from the Customers table
+SELECT DISTINCT country
+FROM Customers;
+
+-- TOP / LIMIT (psql does not have a TOP keyword, but you can use LIMIT to achieve the same result)
+-- the TOP keyword is used to restrict the number of records to return in the result set
+-- COMMAND: SELECT TOP number column1, column2, FROM table_name;
+
+-- TASK 1: Retrieve the top 3 customers
+SELECT *
+FROM Customers
+LIMIT 3;
+
+-- TASK 2: Retrieve the top 3 customers ordered by score in descending order
+
+SELECT *
+FROM Customers
+ORDER BY score DESC
+LIMIT 3; 
+-- TASK 3: Retrieve top 2 customers with the lowest score
+
+SELECT *
+FROM Customers
+ORDER BY score ASC
+LIMIT 2;
+
+-- TASK 4: Retrieve the two most recent orders
+SELECT *
+FROM Orders
+ORDER BY order_Date DESC
+LIMIT 2;
