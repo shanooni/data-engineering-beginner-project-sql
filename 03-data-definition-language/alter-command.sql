@@ -14,8 +14,8 @@
 
 
 -- TASK 1 : Add a new column called email to the persons table
--- ALTER TABLE persons
--- ADD email VARCHAR(100);
+ALTER TABLE persons
+ADD email VARCHAR(100);
 
 -- TASK 2 : Drop the phone_number column from the persons table
 ALTER TABLE persons
